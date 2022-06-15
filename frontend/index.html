@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Naluri Space, Solar System</title>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $.ajax({
+            url: "http://localhost:8080/pi",
+            type: "GET",
+            success: function(result){
+                document.getElementById('pi').innerHTML = "Current PI : " + result.pi
+                var cf = result.pi * 2 * 695508000
+                document.getElementById('cf').innerHTML = "Sun Circumferences : " + cf
+            }
+        })
+    })
+</script>
+<h1>Calculation of the solar system</h1>
+<div id="pi">
+
+</div>
+<div id="cf"></div>
+</body>
+</html>
